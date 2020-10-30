@@ -27,7 +27,7 @@ def get_photo(update, context):
     file_name = file_content.download()
     new_name = moremorejpeg(file_name)
     #update.message.reply_text(file_name)
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo=new_name)
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(new_name,'rb'))
 
 def main():
     global updater
